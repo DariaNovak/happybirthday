@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З Днем Народження, кохана! 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-pink: #ff6b9d;
+            --soft-pink: #ffeef4;
+            --light-pink: #fff0f5;
+            --accent-pink: #ff8fab;
+            --deep-pink: #e91e63;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --white: #ffffff;
+            --gradient-1: linear-gradient(135deg, #ff6b9d, #ff8fab);
+            --gradient-2: linear-gradient(135deg, #ffeef4, #fff0f5);
+            --shadow-soft: 0 10px 40px rgba(255, 107, 157, 0.15);
+            --shadow-hover: 0 20px 60px rgba(255, 107, 157, 0.25);
+            --shadow-strong: 0 25px 80px rgba(255, 107, 157, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--soft-pink) 0%, var(--white) 30%, var(--light-pink) 70%, var(--soft-pink) 100%);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease-in-out infinite;
+            min-height: 100vh;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Animated Background Elements */
+        .bg-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            opacity: 0.1;
+            animation: floatShape 20s ease-in-out infinite;
+        }
+
+        .shape-1 { width: 100px; height: 100px; top: 10%; left: 10%; animation-delay: 0s; }
+        .shape-2 { width: 150px; height: 150px; top: 60%; right: 10%; animation-delay: 5s; }
+        .shape-3 { width: 80px; height: 80px; bottom: 20%; left: 20%; animation-delay: 10s; }
+        .shape-4 { width: 120px; height: 120px; top: 30%; right: 30%; animation-delay: 15s; }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(120deg); }
+            66% { transform: translateY(20px) rotate(240deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 1rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-item {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-pink);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 0 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: titleGlow 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 107, 157, 0.3)); }
+            50% { filter: drop-shadow(0 0 40px rgba(255, 107, 157, 0.6)); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            display: block;
+            animation: countUp 2s ease-out;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Love Message Section */
+        .love-section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .love-message {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 2rem;
+            padding: 3rem;
+            margin: 3rem 0;
+            box-shadow: var(--shadow-strong);
+            border: 1px solid rgba(255, 107, 157, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-message::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+            animation: rotate 10s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .love-message h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--primary-pink);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .love-text {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .love-text:nth-child(3) { animation-delay: 0.2s; }
+        .love-text:nth-child(4) { animation-delay: 0.4s; }
+        .love-text:nth-child(5) { animation-delay: 0.6s; }
+        .love-text:nth-child(6) { animation-delay: 0.8s; }
+
+        .love-text.highlight {
+            font-weight: 600;
+            color: var(--primary-pink);
+            font-size: 1.3rem;
+            background: var(--gradient-2);
+            padding: 1rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary-pink);
+        }
+
+        /* Memories Section */
+        .memories-section {
+            padding: 4rem 0;
+            background: var(--gradient-2);
+            border-radius: 3rem;
+            margin: 4rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            text-align: center;
+            color: var(--primary-pink);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .memory-card {
+            background: var(--white);
+            border-radius: 2rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .memory-card:hover::before {
+            left: 100%;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .memory-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .memory-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-pink);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .memory-text {
+            color: var(--text-dark);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Photo Gallery Enhanced */
+        .gallery-section {
+            padding: 4rem 0;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .photo-card {
+            background: var(--white);
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 107, 157, 0.1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .photo-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255, 107, 157, 0.1), rgba(255, 139, 171, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-card:hover::after {
+            opacity: 1;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-strong);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-caption {
+            padding: 2rem;
+            text-align: center;
+            font-weight: 500;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Wishes Section */
+        .wishes-section {
+            padding: 4rem 0;
+            background: var(--white);
+            border-radius: 3rem;
+            margin: 4rem 0;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .wishes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .wish-card {
+            background: var(--gradient-2);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wish-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-1);
+            border-radius: 1.5rem;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .wish-card:hover::before {
+            opacity: 1;
+        }
+
+        .wish-card:hover {
+            transform: translateY(-8px);
+            color: var(--white);
+        }
+
+        .wish-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .wish-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        /* Interactive Elements */
+        .interactive-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .love-button {
+            background: var(--gradient-1);
+            color: var(--white);
+            border: none;
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-soft);
+            font-family: 'Poppins', sans-serif;
+            margin: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .love-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        .love-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .love-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .love-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            border-radius: 2rem;
+            padding: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+
+        .quote-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--primary-pink);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 4rem 0;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: var(--primary-pink);
+            background: var(--gradient-2);
+            border-radius: 3rem 3rem 0 0;
+            margin-top: 4rem;
+        }
+
+        /* Floating Hearts Enhanced */
+        .floating-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            font-size: 1.5rem;
+            animation: floatUp 6s linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(0);
+                opacity: 1;
+            }
+            10% {
+                transform: translateY(90vh) rotate(36deg) scale(1);
+                opacity: 1;
+            }
+            90% {
+                transform: translateY(-10vh) rotate(324deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Sparkle Effect Enhanced */
+        .sparkle {
+            position: fixed;
+            width: 6px;
+            height: 6px;
+            background: var(--primary-pink);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnim 3s ease-out forwards;
+        }
+
+        @keyframes sparkleAnim {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0) rotate(360deg);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        @keyframes countUp {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .hero {
+                padding: 4rem 0 6rem;
+            }
+            
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            .stat-item {
+                padding: 1.5rem;
+            }
+            
+            .love-message, .memories-section, .wishes-section {
+                padding: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Decorations -->
+    <div class="bg-decoration">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-item" onclick="scrollToSection('hero')">Головна</div>
+        <div class="nav-item" onclick="scrollToSection('memories')">Спогади</div>
+        <div class="nav-item" onclick="scrollToSection('gallery')">Фото</div>
+        <div class="nav-item" onclick="scrollToSection('wishes')">Побажання</div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <h1 class="hero-title">З Днем Народження!</h1>
+            <p class="hero-subtitle">Моїй найдорожчій подрузі, яка робить світ яскравішим 💕</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item" onclick="createHeartExplosion()">
+                    <span class="stat-number" data-count="∞">0</span>
+                    <div class="stat-label">Днів дружби</div>
+                </div>
+                <div class="stat-item" onclick="createHeartExplosion()">
+                    <span class="stat-number" data-count="100000000000000">0</span>
+                    <div class="stat-label">Спільних сміхів</div>
+                </div>
+                <div class="stat-item" onclick="createHeartExplosion()">
+                    <span class="stat-number" data-count="∞">0</span>
+                    <div class="stat-label">Любові до тебе</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Love Message Section -->
+        <section class="love-section">
+            <div class="love-message">
+                <h2>Ти моє сонечко 💖</h2>
+                <p class="love-text highlight">Сьогодні твій особливий день, і я хочу, щоб ти знала, наскільки ти важлива для мене...</p>
+                <p class="love-text">Ти не просто подруга — ти  моя підтримка. З тобою кожен день стає пригодою, а кожна розмова — це подарунок.</p>
+                <p class="love-text highlight">Дякую тобі за те, що ти завжди поруч, за твою щирість, турботу і за те, що ти робиш мене кращою людиною 🌸✨</p>
+            </div>
+        </section>
+
+       
+
+        <!-- Photo Gallery -->
+        <section id="gallery" class="gallery-section">
+            <h2 class="section-title">Наша галерея щастя</h2>
+            <div class="gallery">
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_1_2025-06-20_20-48-37.jpg-MKYHNmEckyd9k4ZQ7ClwPxB76VHVmB.jpeg" alt="Біля водоспаду">
+                    <div class="photo-caption">Наші незабутні пригоди біля водоспаду 🌊✨</div>
+                </div>
+                
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_3_2025-06-20_20-48-37.jpg-T2Zk7JMuJBO7SYr2ybwMfQTqy5IqDt.jpeg" alt="На оглядовому майданчику">
+                    <div class="photo-caption">Разом на вершині світу 🏔️💕</div>
+                </div>
+                
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_2_2025-06-20_20-48-37.jpg-wyA2xFTJCfNQtH2zhtQOnauMR6DSWX.jpeg" alt="На канатній дорозі">
+                    <div class="photo-caption">Піднімаємося до мрій разом 🚡🌟</div>
+                </div>
+                
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_5_2025-06-20_20-48-37.jpg-v8OE6SNKYDWOau7LyXtmjGRHh2TIFU.jpeg" alt="Ще одна поїздка">
+                    <div class="photo-caption">Посмішки, що зігрівають серце 😊💖</div>
+                </div>
+                
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_6_2025-06-20_20-48-37.jpg-qWOfJh7oP5Yd7BYFnuqaKQLsM4jpd0.jpeg" alt="Біля річки">
+                    <div class="photo-caption">Рука в руці через усі пригоди 🤝🌸</div>
+                </div>
+                
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_8_2025-06-20_20-48-37.jpg-UE0n01JD0FIPOp1jzLSO1ewZt3vyGf.jpeg" alt="Оглядовий майданчик">
+                    <div class="photo-caption">Обійми, що лікують душу 🤗💫</div>
+                </div>
+                
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_4_2025-06-20_20-48-37.jpg-vbbyORqZI7jHJKy2vzjjHGuc6J39V4.jpeg" alt="У транспорті">
+                    <div class="photo-caption">Навіть у дорозі — завжди весело! 🚌😄</div>
+                </div>
+                
+                <div class="photo-card" onclick="enlargePhoto(this)">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo_7_2025-06-20_20-48-37.jpg-D6JzjF6D3gYymK8WwKjJRODXz7lsiQ.jpeg" alt="Селфі в природі">
+                    <div class="photo-caption">Природна красуня в своїй стихії 🌿✨</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wishes Section -->
+        <section id="wishes" class="wishes-section">
+            <h2 class="section-title">Мої побажання для тебе</h2>
+            <div class="wishes-container">
+                <div class="wish-card">
+                    <span class="wish-emoji">🌟</span>
+                    <p class="wish-text">Нехай кожен твій день сяє як зірка на небі</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-emoji">💖</span>
+                    <p class="wish-text">Бажаю тобі любові, яка зігріває серце</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-emoji">🦋</span>
+                    <p class="wish-text">Нехай твої мрії злітають високо, як метелики</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-emoji">🌈</span>
+                    <p class="wish-text">Хай після кожної бурі з'являється веселка</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-emoji">🎭</span>
+                    <p class="wish-text">Нехай твій сміх лунає щодня</p>
+                </div>
+                <div class="wish-card">
+                    <span class="wish-emoji">🌸</span>
+                    <p class="wish-text">Бажаю тобі розквітати, як весняна квітка</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <div class="quote-card">
+                <p class="quote-text">"Далой менів!"</p>
+                <p class="quote-author">— З любов'ю до тебе 💕</p>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section class="interactive-section">
+            <button class="love-button" onclick="showLove()">
+                ✨ Натисни для магії ✨
+            </button>
+            <button class="love-button" onclick="createFireworks()">
+                🎆 Святковий салют 🎆
+            </button>
+            <button class="love-button" onclick="playBirthdayAnimation()">
+                🎉 Танець сердець 🎉
+            </button>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            З безмежною любов'ю і найкращими побажаннями! 💕
+            
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced heart creation
+        function createFloatingHeart() {
+            const hearts = ['💕', '💖', '💗', '🌸', '✨', '🦋', '🌟', '💫', '🌺', '🌷'];
+            const heart = document.createElement('div');
+            heart.className = 'floating-heart';
+            heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            heart.style.fontSize = (Math.random() * 10 + 15) + 'px';
+            heart.style.opacity = Math.random() * 0.8 + 0.2;
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        // Enhanced sparkles
+        function createSparkles(x, y, count = 8) {
+            for (let i = 0; i < count; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = (x + Math.random() * 40 - 20) + 'px';
+                sparkle.style.top = (y + Math.random() * 40 - 20) + 'px';
+                sparkle.style.animationDelay = (Math.random() * 0.8) + 's';
+                sparkle.style.background = `hsl(${Math.random() * 60 + 300}, 70%, 60%)`;
+                document.body.appendChild(sparkle);
+
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 3000);
+            }
+        }
+
+        // Heart explosion effect
+        function createHeartExplosion() {
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    createFloatingHeart();
+                }, i * 80);
+            }
+        }
+
+        // Fireworks effect
+        function createFireworks() {
+            const colors = ['#ff6b9d', '#ff8fab', '#ffeef4', '#e91e63', '#ff1744'];
+            
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight * 0.6;
+                    
+                    for (let j = 0; j < 15; j++) {
+                        const particle = document.createElement('div');
+                        particle.style.cssText = `
+                            position: fixed;
+                            width: 4px;
+                            height: 4px;
+                            background: ${colors[Math.floor(Math.random() * colors.length)]};
+                            border-radius: 50%;
+                            pointer-events: none;
+                            left: ${x}px;
+                            top: ${y}px;
+                            z-index: 1000;
+                        `;
+                        
+                        const angle = (j / 15) * Math.PI * 2;
+                        const velocity = Math.random() * 100 + 50;
+                        const vx = Math.cos(angle) * velocity;
+                        const vy = Math.sin(angle) * velocity;
+                        
+                        document.body.appendChild(particle);
+                        
+                        let posX = x;
+                        let posY = y;
+                        let opacity = 1;
+                        
+                        const animate = () => {
+                            posX += vx * 0.02;
+                            posY += vy * 0.02;
+                            opacity -= 0.02;
+                            
+                            particle.style.left = posX + 'px';
+                            particle.style.top = posY + 'px';
+                            particle.style.opacity = opacity;
+                            
+                            if (opacity > 0) {
+                                requestAnimationFrame(animate);
+                            } else {
+                                particle.remove();
+                            }
+                        };
+                        
+                        animate();
+                    }
+                }, i * 300);
+            }
+        }
+
+        // Birthday animation
+        function playBirthdayAnimation() {
+            createHeartExplosion();
+            setTimeout(() => createFireworks(), 500);
+            setTimeout(() => {
+                showCustomMessage("🎉 З Днем Народження! 🎉<br>Ти найкраща подруга у світі! 💕");
+            }, 1000);
+        }
+
+        // Enhanced love button
+        function showLove() {
+            createHeartExplosion();
+            
+            const messages = [
+                "Ти найкраща подруга! 💖",
+                "Люблю тебе безмежно! 💕",
+                "Ти моє щастя! 🌟",
+                "Дякую за дружбу! 🤗",
+                "Ти неймовірна! ✨",
+                "З Днем Народження! 🎉",
+                "Ти моє сонечко! ☀️",
+                "Назавжди разом! 👭"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            showCustomMessage(randomMessage);
+        }
+
+        // Custom message display
+        function showCustomMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.style.cssText = `
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(15px);
+                padding: 3rem;
+                border-radius: 2rem;
+                box-shadow: 0 25px 80px rgba(255, 107, 157, 0.4);
+                font-size: 2rem;
+                font-family: 'Dancing Script', cursive;
+                color: var(--primary-pink);
+                text-align: center;
+                z-index: 10000;
+                animation: fadeInUp 0.6s ease-out;
+                border: 2px solid rgba(255, 107, 157, 0.3);
+                max-width: 90vw;
+            `;
+            messageDiv.innerHTML = message;
+            document.body.appendChild(messageDiv);
+
+            setTimeout(() => {
+                messageDiv.style.animation = 'fadeInUp 0.6s ease-out reverse';
+                setTimeout(() => {
+                    messageDiv.remove();
+                }, 600);
+            }, 3000);
+        }
+
+        // Photo enlargement
+        function enlargePhoto(card) {
+            const img = card.querySelector('img');
+            const caption = card.querySelector('.photo-caption').textContent;
+            
+            const overlay = document.createElement('div');
+            overlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(10px);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                cursor: pointer;
+                animation: fadeInUp 0.3s ease-out;
+            `;
+            
+            const enlargedImg = document.createElement('img');
+            enlargedImg.src = img.src;
+            enlargedImg.style.cssText = `
+                max-width: 90%;
+                max-height: 80%;
+                border-radius: 1rem;
+                box-shadow: 0 25px 80px rgba(255, 107, 157, 0.4);
+            `;
+            
+            const enlargedCaption = document.createElement('div');
+            enlargedCaption.textContent = caption;
+            enlargedCaption.style.cssText = `
+                color: white;
+                font-size: 1.5rem;
+                margin-top: 2rem;
+                text-align: center;
+                font-family: 'Dancing Script', cursive;
+            `;
+            
+            overlay.appendChild(enlargedImg);
+            overlay.appendChild(enlargedCaption);
+            document.body.appendChild(overlay);
+            
+            overlay.onclick = () => {
+                overlay.style.animation = 'fadeInUp 0.3s ease-out reverse';
+                setTimeout(() => overlay.remove(), 300);
+            };
+            
+            createSparkles(window.innerWidth / 2, window.innerHeight / 2, 12);
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = counter.getAttribute('data-count');
+                if (target === '∞') {
+                    counter.textContent = '∞';
+                    return;
+                }
+                
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current);
+                    }
+                }, 20);
+            });
+        }
+
+        // Enhanced click interactions
+        document.addEventListener('click', function(e) {
+            createSparkles(e.clientX, e.clientY, 6);
+        });
+
+        // Auto-create floating hearts
+        setInterval(createFloatingHeart, 2000);
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    
+                    // Animate counters when hero section is visible
+                    if (entry.target.id === 'hero') {
+                        setTimeout(animateCounters, 500);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for scroll animations
+        document.querySelectorAll('.photo-card, .memory-card, .wish-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(card);
+        });
+
+        // Observe hero section
+        observer.observe(document.getElementById('hero'));
+
+        // Parallax effect for background shapes
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const shapes = document.querySelectorAll('.floating-shape');
+            
+            shapes.forEach((shape, index) => {
+                const speed = 0.5 + (index * 0.1);
+                shape.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Welcome animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                createHeartExplosion();
+                showCustomMessage("Вітаю на сторінці привітань! 🎉💕");
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
